@@ -10,7 +10,7 @@ Twitter Scrapper API for Python
 from twitter_scrapper import collector
 
 keywords = "indihome"
-starting_date = None
+starting_date = None # "2022-01-1 00:00:00"
 output_filename = "indihome.csv"
 limit = 1000
 lang='en'
