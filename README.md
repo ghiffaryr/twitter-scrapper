@@ -10,13 +10,14 @@ Twitter Scrapper API for Python
 from twitter_scrapper import collector
 
 keywords = "indihome"
-starting_date = None # "2022-01-1 00:00:00"
-output_filename = "indihome.csv"
+starting_date = None # "2022-11-10 00:00:00"
+end_date = None # "2022-11-11 00:00:00"
+output_filename = "indihome_predict.csv"
 limit = 1000
-lang='en'
+lang='id'
 user = None
 format = output_filename[-3:]
-collector(keywords, output_filename, starting_date, limit=limit, lang=lang, user=user, format=format)
+collector(keywords, output_filename, starting_date=starting_date, end_date=end_date, limit=limit, lang=lang, user=user, format=format)
 
 import pandas as pd
 

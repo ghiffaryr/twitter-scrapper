@@ -2,9 +2,9 @@ import twint
 import nest_asyncio
 import time
 
-def collector(keywords, output_filename, starting_date=None, limit=1000, lang='id', user=None, format='csv'):
+def collector(keywords, output_filename, starting_date=None, end_date=None, limit=1000, lang='id', user=None, format='csv'):
     # execution date
-    timestr = time.strftime("%Y%m%d")
+    print('Execution Date: ', time.strftime("%Y%m%d"))
 
     # to avoid the event loop is already running in python error message.
     nest_asyncio.apply()
@@ -15,8 +15,11 @@ def collector(keywords, output_filename, starting_date=None, limit=1000, lang='i
     # tweets from username
     if user is not None: conf.Username = tweet_user
 
-    # get tweets published after date
+    # get tweets published starting date
     if starting_date is not None: conf.Since = starting_date
+    
+    # get tweets published end date
+    if end_date is not None: conf.Until = end_date
 
     # search criteria
     conf.Search = keywords
